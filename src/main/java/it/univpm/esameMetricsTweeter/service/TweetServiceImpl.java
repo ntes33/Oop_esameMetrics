@@ -1,35 +1,33 @@
 package it.univpm.esameMetricsTweeter.service;
 
-import java.text.ParseException;
 import java.util.ArrayList;
 
 import org.springframework.stereotype.Service;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
+
 import com.google.gson.JsonObject;
 
-import ch.qos.logback.core.filter.Filter;
+import it.univpm.esameMetricsTweeter.exception.EmptyListException;
 import it.univpm.esameMetricsTweeter.model.Tweet;
 
-/**
- * Implementazione dell'interfaccia Service
- * 
- */
+
+         // Implementazione dell'interfaccia Service
+ 
 
 @Service
 public class TweetServiceImpl implements TweetServiceInt {
 
-	// ArrayList di Tweet che serve a memorizzare i Tweet
+	     // ArrayList di Tweet che serve a memorizzare i Tweet
 
 	private static ArrayList<Tweet> tweetList = new ArrayList<Tweet>();
 
 	public ArrayList<Tweet> getTweet() throws EmptyListException {
 
-		// Eccezione nel caso in cui la lista sia vuota
+		/** Eccezione nel caso in cui la lista sia vuota */
 		if (tweetList.isEmpty())
-		throw new EmptyListException("La lista di tweet è vuota!");
+			throw new EmptyListException("La lista è vuota!");
 
 		return tweetList;
 	}
@@ -58,12 +56,12 @@ public class TweetServiceImpl implements TweetServiceInt {
 				JsonObject obj = new JsonObject();
 				obj = array.get(i).getAsJsonObject();
 				obj.addProperty("retweet_count", array.get(i).getAsJsonObject().get("retweeted_status")
-				.getAsJsonObject().get("retweet_count").getAsBigInteger());
+						.getAsJsonObject().get("retweet_count").getAsBigInteger());
 				obj.addProperty("favorite_count", array.get(i).getAsJsonObject().get("retweeted_status")
-				.getAsJsonObject().get("favorite_count").getAsBigInteger());
+						.getAsJsonObject().get("favorite_count").getAsBigInteger());
 				array.set(i, obj);
 			}
-		
+
 		}
 		Gson GoogleSon = new Gson();
 		Tweet[] gsonArray = GoogleSon.fromJson(array, Tweet[].class);
@@ -72,7 +70,8 @@ public class TweetServiceImpl implements TweetServiceInt {
 
 	
 	
-
+	
+	
 	
 	
 }
