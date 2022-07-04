@@ -1,15 +1,21 @@
 package it.univpm.esameMetricsTweeter.service;
 
+
 import java.util.ArrayList;
 
 import org.springframework.stereotype.Service;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.module.jsonSchema.JsonSchemaGenerator;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 
 import com.google.gson.JsonObject;
 
+
 import it.univpm.esameMetricsTweeter.exception.EmptyListException;
+
 import it.univpm.esameMetricsTweeter.model.Tweet;
 
 
@@ -68,6 +74,22 @@ public class TweetServiceImpl implements TweetServiceInt {
 		return gsonArray;
 	}
 
+	
+	
+	public String getMetadata(Class<?> dati) {
+		
+		try {
+			ObjectMapper mapper = new ObjectMapper();
+			JsonSchemaGenerator schemaGen = new JsonSchemaGenerator(mapper);
+			com.fasterxml.jackson.module.jsonSchema.JsonSchema schema = schemaGen.generateSchema(dati);
+			return mapper.writeValueAsString(schema);
+		} catch (JsonProcessingException e) {
+			return e.getLocalizedMessage();
+		}
+	}
+	
+	
+	
 	
 	
 	

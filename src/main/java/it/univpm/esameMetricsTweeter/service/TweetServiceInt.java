@@ -1,8 +1,10 @@
 package it.univpm.esameMetricsTweeter.service;
 
+
 import java.util.ArrayList;
 
 import it.univpm.esameMetricsTweeter.exception.EmptyListException;
+
 import it.univpm.esameMetricsTweeter.model.Tweet;
 
     /**
@@ -34,6 +36,19 @@ public interface TweetServiceInt {
 	 * @return Array di Tweet
 	 */
 	public abstract Tweet[] addJSON (String body);
+	
+	
+	
+	/**
+	 * Restituisce i metadata tramite ObjectMapper e JsonSchemaGenerator della classe passata
+	 *
+	 * @param myClass Una classe
+	 * @return I Meta Data di tale classe
+	 */
+	public abstract String getMetadata(Class<?> dati);
+	
+	
+	
 	
 	
 }
