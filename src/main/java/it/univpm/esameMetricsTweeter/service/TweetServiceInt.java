@@ -1,54 +1,57 @@
 package it.univpm.esameMetricsTweeter.service;
 
-
+import java.io.IOException;
 import java.util.ArrayList;
 
-import it.univpm.esameMetricsTweeter.exception.EmptyListException;
+import org.json.simple.parser.ParseException;
 
+
+import it.univpm.esameMetricsTweeter.dataBase.DownloadAndParseData;
+import it.univpm.esameMetricsTweeter.model.InfoDb;
+import it.univpm.esameMetricsTweeter.model.MetaData;
 import it.univpm.esameMetricsTweeter.model.Tweet;
 
-    /**
+/**
      * L'interfaccia del package Service
      */
 
-    
-public interface TweetServiceInt {
+   
+    public interface TweetServiceInt {
 
+	 /**
+     * The application dataPool
+     */
+	public  ArrayList<Tweet> DataBase=new ArrayList<>();
+    /**
+     * Used to Create the DataBase
+     */
+    //private Downloading_and_Parsing JSON_Info_Conteiner=new  Downloading_and_Parsing();
+    
+    DownloadAndParseData jsonData = new  DownloadAndParseData();
+    /**
+     * All the metadata
+     */
+    public  InfoDb metadata=new InfoDb();
+    /**
+     * New arraylist composed of the dataPool records that are filtered
+     */
+    public  ArrayList<Tweet> FilteredDataBase=new ArrayList<>();
+    
+	
+  
 	/**
-	 * Mi restituisce tutti i Tweet inseriti
-	 *
-	 * @return ArrayList dei Tweet
-	 * @throws EmptyListException Caso lista vuota
+	 * The function that shows all the Tweets
+	 * @return An ArrayList of Tweets
+	 * @throws ParseException
+	 * @throws org.apache.tomcat.util.json.ParseException
+	 * @throws IOException
 	 */
-	public abstract ArrayList<Tweet> getTweet() throws  EmptyListException; 
-	
-	/**
-	 * Memorizza l'array di Tweet passato, cancellando quelli già inseriti
-	 *
-	 * @param tweetArray Array di Tweet
-	 */
-	public abstract void addTweetsArray (Tweet[] tweetArray);
-	
-	/**
-	 * Fa il parsing del JSON ritornando un array di Tweet
-	 *
-	 * @param body Stringa del JSON
-	 * @return Array di Tweet
-	 */
-	public abstract Tweet[] addJSON (String body);
-	
-	
-	
-	/**
-	 * Restituisce i metadata tramite ObjectMapper e JsonSchemaGenerator della classe passata
-	 *
-	 * @param myClass Una classe
-	 * @return I Meta Data di tale classe
-	 */
-	public abstract String getMetadata(Class<?> dati);
-	
-	
-	
-	
-	
+	ArrayList<Tweet> getAllTweets() throws ParseException, org.apache.tomcat.util.json.ParseException, IOException;
+    
+	 /**
+     * Metadata Visualizzation method
+     * @return An ArrayList of metadata
+     */
+	public abstract ArrayList<MetaData> recordMetadata();
+    
 }
