@@ -2,11 +2,13 @@ package it.univpm.esameMetricsTweeter.service;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import org.json.simple.parser.ParseException;
 
 
 import it.univpm.esameMetricsTweeter.dataBase.DownloadAndParseData;
+import it.univpm.esameMetricsTweeter.exception.WrongFilterStatsException;
 import it.univpm.esameMetricsTweeter.model.InfoDb;
 import it.univpm.esameMetricsTweeter.model.MetaData;
 import it.univpm.esameMetricsTweeter.model.Tweet;
@@ -53,5 +55,19 @@ import it.univpm.esameMetricsTweeter.model.Tweet;
      * @return An ArrayList of metadata
      */
 	public abstract ArrayList<MetaData> recordMetadata();
-    
+   
+	
+	/**
+	 * Service delle statistiche
+	 *
+	 * @param body stringa contenente il tipo di filtro da utilizzare.
+	 * @return La  Hash Map con tutte le statistiche.
+	 * @throws WrongFilterStatsException Eccezione che parte se il tipo di filtro
+	 * non è corretto
+	 *                                   
+	 */
+	public abstract HashMap<String, Float> statsService(String body) throws WrongFilterStatsException;
+	
+	
+	
 }

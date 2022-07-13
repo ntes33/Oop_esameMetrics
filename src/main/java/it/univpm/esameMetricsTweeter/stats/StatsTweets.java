@@ -3,11 +3,10 @@ package it.univpm.esameMetricsTweeter.stats;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+
 import it.univpm.esameMetricsTweeter.model.Tweet;
 
-
-
-public class Stat {
+public class StatsTweets {
 
 	/**
 	 * Classe delle statistiche (leggere la Readme per la lista completa)
@@ -21,42 +20,42 @@ public class Stat {
 	 * @param list Lista di cui calcolare le statistiche
 	 * @return Elenco delle statistiche
 	 */
-	public static HashMap<String, Float> stats(ArrayList<Tweet> list) {
+	public static HashMap<String, Float> stats(ArrayList<Tweet>dataBase ) {
 		int meanFavorite = 0;
-		float minFavorite = list.get(0).getN_like();
+		float minFavorite = dataBase.get(0).getN_like();
 		float maxFavorite = -1;
 		int meanRetweet = 0;
-		float minRetweet = list.get(0).getN_retweet();
+		float minRetweet = dataBase.get(0).getN_retweet();
 		float maxRetweet = -1;
 		float varianceLikes = 0;
 		float varianceRetweets = 0;
 
-		for (int i = 0; i < list.size(); i++) {
-			if (list.get(i).getN_like() > maxFavorite) {
-				maxFavorite = list.get(i).getN_like();
+		for (int i = 0; i < dataBase.size(); i++) {
+			if (dataBase.get(i).getN_like() > maxFavorite) {
+				maxFavorite = dataBase.get(i).getN_like();
 			}
-			if (list.get(i).getN_like() < minFavorite) {
-				minFavorite = list.get(i).getN_like();
+			if (dataBase.get(i).getN_like() < minFavorite) {
+				minFavorite = dataBase.get(i).getN_like();
 			}
-			if (list.get(i).getN_retweet() > maxRetweet) {
-				maxRetweet= list.get(i).getN_retweet();
+			if (dataBase.get(i).getN_retweet() > maxRetweet) {
+				maxRetweet= dataBase.get(i).getN_retweet();
 			}
-			if (list.get(i).getN_retweet() < minRetweet) {
-				minRetweet = list.get(i).getN_retweet();
+			if (dataBase.get(i).getN_retweet() < minRetweet) {
+				minRetweet = dataBase.get(i).getN_retweet();
 			}
-			meanFavorite += list.get(i).getN_like();
-			meanRetweet += list.get(i).getN_retweet();
+			meanFavorite += dataBase.get(i).getN_like();
+			meanRetweet += dataBase.get(i).getN_retweet();
 		}
-		meanFavorite = meanFavorite / list.size();
-		meanRetweet = meanRetweet / list.size();
+		meanFavorite = meanFavorite / dataBase.size();
+		meanRetweet = meanRetweet / dataBase.size();
 		
 		// ciclo for variaza
-		for (int i = 0; i < list.size(); i++) {
-			varianceLikes += Math.pow(((float)list.get(i).getN_like() - meanFavorite), 2);
-			varianceRetweets += Math.pow(((float)list.get(i).getN_retweet() - meanRetweet), 2);
+		for (int i = 0; i < dataBase.size(); i++) {
+			varianceLikes += Math.pow(((float)dataBase.get(i).getN_like() - meanFavorite), 2);
+			varianceRetweets += Math.pow(((float)dataBase.get(i).getN_retweet() - meanRetweet), 2);
 		}
-		varianceLikes = varianceLikes / list.size();
-		varianceRetweets = varianceRetweets / list.size();
+		varianceLikes = varianceLikes / dataBase.size();
+		varianceRetweets = varianceRetweets / dataBase.size();
 		
 		float standardDeviationLikes = (float) Math.sqrt(varianceLikes);
 		float standardDeviationRetweets = (float) Math.sqrt(varianceRetweets);
@@ -76,6 +75,16 @@ public class Stat {
 		return statMap;		
 		
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
