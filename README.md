@@ -103,6 +103,8 @@ Il programma contiene delle eccezioni personalizzate :
 
 ## UML CASE DIAGRAM 📈 
 
+![image](https://user-images.githubusercontent.com/107246907/179115669-ba0a0231-0ee0-4323-88c4-705f11b13bed.png)
+
 
 
 
