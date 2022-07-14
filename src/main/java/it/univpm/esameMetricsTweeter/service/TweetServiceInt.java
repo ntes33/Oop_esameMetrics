@@ -8,6 +8,7 @@ import org.json.simple.parser.ParseException;
 
 
 import it.univpm.esameMetricsTweeter.dataBase.DownloadAndParseData;
+import it.univpm.esameMetricsTweeter.exception.WrongFilterException;
 import it.univpm.esameMetricsTweeter.exception.WrongFilterStatsException;
 import it.univpm.esameMetricsTweeter.model.InfoDb;
 import it.univpm.esameMetricsTweeter.model.MetaData;
@@ -66,8 +67,8 @@ import it.univpm.esameMetricsTweeter.model.Tweet;
 	 * non è corretto
 	 *                                   
 	 */
-	public abstract HashMap<String, Float> statsService(String body) throws WrongFilterStatsException;
 	
+	public abstract ArrayList<Tweet> getTweetsFilter(String body, ArrayList<Tweet> dataBase) throws ParseException, WrongFilterException, java.text.ParseException;
 	
 	
 }

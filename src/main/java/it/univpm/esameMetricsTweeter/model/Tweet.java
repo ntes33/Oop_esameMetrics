@@ -1,5 +1,9 @@
 package it.univpm.esameMetricsTweeter.model;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 public class Tweet {
 
@@ -186,6 +190,21 @@ public class Tweet {
 		    public void setFollowing(Long following) {
 		        Following = following;
 		    }
+		    
+		    
+			 
+		    
+		    /**
+			 * Fa parsing della data e trasforma la stringa in un oggetto Date
+			 *
+			 * @return Oggetto data (con il formato di Twitter)
+			 * @throws ParseException se ci sono problemi con il formato della data
+			 */
+			public Date parsedDate() throws ParseException {
+				SimpleDateFormat sf = new SimpleDateFormat("EEE MMM dd HH:mm:ss ZZZZZ yyyy", Locale.ENGLISH);
+				sf.setLenient(false);
+				return sf.parse(this.created_at);
+			}
 		    
 	
 	
