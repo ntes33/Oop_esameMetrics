@@ -112,6 +112,7 @@ Il programma contiene delle eccezioni personalizzate :
 
 ## UML CLASS DIAGRAM 📈
 
+![image](https://user-images.githubusercontent.com/107246907/179115758-a633bd78-b6b0-4fcd-93f1-84415cb37c17.png)
 
 
 
