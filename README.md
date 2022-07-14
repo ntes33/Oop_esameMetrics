@@ -8,6 +8,7 @@
 * [Installazione ed utilizzo](#installazione-ed-utilizzo)
 * [Rotte](#rotte)
 * [Filtraggio](#filtraggio)
+* [Eccezioni](#eccezioni)
 * [UML Case Diagram](#umlcasediagram)
 * [UML Class Diagram](#umlclassdiagram)
 * [JUnit test](#JUnit-test)
@@ -69,7 +70,7 @@ Le statistiche prendono in considerazione i parametri:
 * `param` list Lista di cui calcolare le statistiche
 * `return` Elenco delle statistiche
 
-![image](https://user-images.githubusercontent.com/107246907/178965094-ec316cac-a2d0-4105-8e60-6916dbc6e2f1.png)
+
 
 
 
@@ -89,10 +90,15 @@ Avremmo potuto separare i vari filtri interni al `for` in più funzioni per aver
 
 `throws` WrongFilterException Caso filtro errato
 
-![image](https://user-images.githubusercontent.com/107246907/179078836-ebe1045c-2725-4f08-a260-f426e6889e2c.png)
+<div id='eccezioni'/>
 
+## Eccezioni ❌
 
+Il programma contiene delle eccezioni personalizzate :
 
+`WrongFilterException` nel caso in cui venga inserito un filtro sbagliato
+
+`EmptyListException` che stampa un messaggio d'errore passato come parametro
 
 <div id='umlcasediagram'/>
 
