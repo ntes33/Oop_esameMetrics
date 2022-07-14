@@ -141,6 +141,9 @@ La lista di software & tools utilizzati è la seguente:
 * [Javadoc](https://www.oracle.com/java/technologies/javase/javadoc-tool.html) - Strumento per la generazione automatica della documentazione del codice sorgente
 * [JUnit 5](https://junit.org/junit5/) -Framework per lo unit testing
 * [UML Lab Modeling IDE](https://www.uml-lab.com/en/uml-lab/) - Software per la creazione dei UML diagrams
+* [Project Lombok](https://projectlombok.org/) - Libreria usata per ridurre drasticamente la verbosità del linguaggio
+* [GSON] - Libreria per il JSON
+
 
 <div id='autori'/>
 
