@@ -2,14 +2,13 @@ package it.univpm.esameMetricsTweeter.service;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
-
 import org.json.simple.parser.ParseException;
 
 
 import it.univpm.esameMetricsTweeter.dataBase.DownloadAndParseData;
+import it.univpm.esameMetricsTweeter.exception.EmptyListException;
 import it.univpm.esameMetricsTweeter.exception.WrongFilterException;
-import it.univpm.esameMetricsTweeter.exception.WrongFilterStatsException;
+
 import it.univpm.esameMetricsTweeter.model.InfoDb;
 import it.univpm.esameMetricsTweeter.model.MetaData;
 import it.univpm.esameMetricsTweeter.model.Tweet;
@@ -25,10 +24,7 @@ import it.univpm.esameMetricsTweeter.model.Tweet;
      * The application dataPool
      */
 	public  ArrayList<Tweet> DataBase=new ArrayList<>();
-    /**
-     * Used to Create the DataBase
-     */
-    //private Downloading_and_Parsing JSON_Info_Conteiner=new  Downloading_and_Parsing();
+   
     
     DownloadAndParseData jsonData = new  DownloadAndParseData();
     /**
@@ -48,8 +44,9 @@ import it.univpm.esameMetricsTweeter.model.Tweet;
 	 * @throws ParseException
 	 * @throws org.apache.tomcat.util.json.ParseException
 	 * @throws IOException
+	 * @throws EmptyListException 
 	 */
-	ArrayList<Tweet> getAllTweets() throws ParseException, org.apache.tomcat.util.json.ParseException, IOException;
+	ArrayList<Tweet> getAllTweets() throws ParseException, org.apache.tomcat.util.json.ParseException, IOException, EmptyListException;
     
 	 /**
      * Metadata Visualizzation method

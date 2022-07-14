@@ -4,20 +4,17 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
-
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
 
+           /*
+            *  Classe che modella tutti gli attribuiti
+            */
 
-            //Classe che modella tutti gli attribuiti
-
-
-//@AllArgsConstructor
  
-@AllArgsConstructor
-@Data  
+@AllArgsConstructor  // chiama automaticamente i costrutori
+@Data                //Genera i setter e getter
 
 public class Tweet {
 	
@@ -43,27 +40,29 @@ public class Tweet {
 		    
 		    private boolean retweeted;
 		    
+		    //Id del utente
 		    private long id_user;
 		    
+		    // Nome dell utente
 		    private String name;
 		    
+		    //Localita 
 		    private String Location;
 		    
 		    private long Follower;
 		    
 		    private long Following;
 		    
-		    /**
-		     *     
+		    
+		    /*    
 		     *  CONSTRUCTORS 
 		     */    
 		    public Tweet() {
 		        
 		    }
 
-		    /**
+		    /*
 			 * Fa parsing della data e trasforma la stringa in un oggetto Date
-			 *
 			 * @return Oggetto data (con il formato di Twitter)
 			 * @throws ParseException se ci sono problemi con il formato della data
 			 */

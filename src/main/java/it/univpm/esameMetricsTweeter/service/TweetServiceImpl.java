@@ -10,10 +10,12 @@ import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
+import it.univpm.esameMetricsTweeter.exception.EmptyListException;
 import it.univpm.esameMetricsTweeter.exception.WrongFilterException;
 import it.univpm.esameMetricsTweeter.filters.Filtri;
 import it.univpm.esameMetricsTweeter.model.MetaData;
 import it.univpm.esameMetricsTweeter.model.Tweet;
+
 
 @Service
 public class TweetServiceImpl implements TweetServiceInt {
@@ -32,9 +34,11 @@ public class TweetServiceImpl implements TweetServiceInt {
 	 */
 
 	public TweetServiceImpl() throws ParseException, org.apache.tomcat.util.json.ParseException, IOException {
+		
 		dataBase = jsonData.jsonTweets();
 	}
 
+	
 	/**
 	 * Metadata Visualizzation method
 	 * 
@@ -53,11 +57,13 @@ public class TweetServiceImpl implements TweetServiceInt {
 	 * @throws ParseException
 	 * @throws org.apache.tomcat.util.json.ParseException
 	 * @throws IOException
+	 * @throws EmptyListException  Caso in cui la lista  dataPool è vuota
 	 */
 
 	@Override
-	public ArrayList<Tweet> getAllTweets()
-			throws ParseException, org.apache.tomcat.util.json.ParseException, IOException {
+	public ArrayList<Tweet> getAllTweets()throws ParseException, org.apache.tomcat.util.json.ParseException, IOException, EmptyListException {
+		if (dataBase.isEmpty())
+			throw new EmptyListException("  ATTENZIONE La lista di di twitt è vuota");
 		return jsonData.jsonTweets();
 	}
 

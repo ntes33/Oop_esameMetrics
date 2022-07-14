@@ -37,9 +37,10 @@ public class GeneralController {
 	 * @throws org.json.simple.parser.ParseException
 	 * @throws ParseException
 	 * @throws IOException
+	 * @throws EmptyListException  Caso in cui la lista  dataPool è vuota
 	 */
 	@GetMapping("/GetTweets")
-	public ArrayList<Tweet> getTweets() throws org.json.simple.parser.ParseException, ParseException, IOException {
+	public ArrayList<Tweet> getTweets() throws org.json.simple.parser.ParseException, ParseException, IOException, EmptyListException {
 		return new ArrayList<Tweet>(tSI.getAllTweets());
 	}
 
@@ -63,16 +64,16 @@ public class GeneralController {
 	 * @param bodyFilter Statistiche richieste scritte in formato JSON (come i filtri)               
 	 * @return Elenco delle statistiche
 	 * @throws ParseException  Caso di filtro per Data (errore nella data)                                            
-	 * @throws GetTweetException    Caso lista vuota (da gestire ancora)
 	 * @throws WrongFilterException   Caso filtro errato
 	 * @throws java.text.ParseException
 	 * @throws org.json.simple.parser.ParseException
 	 * @throws java.text.ParseException
 	 * @throws IOException
+	 * @throws EmptyListException    Caso in cui la lista  dataPool è vuota
 	 */
 	@PostMapping("/twitt/stats")
 	public ResponseEntity<Object> stats(@RequestBody String bodyFilter) throws ParseException, WrongFilterException,
-			org.json.simple.parser.ParseException, java.text.ParseException, IOException {
+			org.json.simple.parser.ParseException, java.text.ParseException, IOException, EmptyListException {
 
 		return new ResponseEntity<Object>(StatsTweets.stats(tSI.getTweetsFilter(bodyFilter, tSI.getAllTweets())),
 				HttpStatus.OK);
@@ -86,7 +87,6 @@ public class GeneralController {
 	 * @param bodyFilter Il filtro richiesto in formato JSON (come Stringa)
 	 * @return Elenco dei tweet filtrati
 	 * @throws ParseException Caso del filtro della data con formato sbagliato                                      
-	 * @throws GetTweetException   Caso lista vuota
 	 * @throws WrongFilterException                  Caso filtro errato
 	 * @throws org.json.simple.parser.ParseException
 	 * @throws java.text.ParseException
