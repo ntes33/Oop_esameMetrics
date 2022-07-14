@@ -79,7 +79,7 @@ Le statistiche prendono in considerazione i parametri:
 
 Avremmo potuto separare i vari filtri interni al `for` in più funzioni per avere un codice più pulito, invece abbiamo preferito evitare di renderlo più lungo dato che la complessità computazionale è la stessa.
 
-`param` list La lista da filtrare
+`param` list filtra la lista database
 
 `param` filter Il JSON di richiesta dei filtri
 
@@ -102,7 +102,7 @@ Il programma contiene delle eccezioni personalizzate :
 <div id='umlcasediagram'/>
 
 ## UML CASE DIAGRAM 📈 
-![image](https://user-images.githubusercontent.com/107246907/178793507-7d08eafc-dce7-4d57-b9f6-899183928445.png)
+
 
 
 
@@ -118,13 +118,6 @@ Il programma contiene delle eccezioni personalizzate :
 
 ## JUNIT TEST 👨‍🔬
 
-| Test                   | Scopo del test                                                                                                                    |  
-|------------------------|-----------------------------------------------------------------------------------------------------------------------------------|
-| **ApiConnectionTest**  | Verificare che venga creata la lista di tweets                                                                                    |
-| **ControllerTest**     | Verificare che in caso di filtro non compatibile con la lista di tweet, la lista di tweet filtrati non contiene alcun tweet       | 
-| **Filtertest**         | Verificare che vengano stampati i messaggi di errore attesi e che il filtro funzioni correttamente                                | 
-| **JSONBuilderTest**    | Verificare che i Json in uscita contengano il numero di tweets attesi                                                             | 
-| **StatsTest**          | Verificare che i metodi che calcolano il numero massimo, il numero minimo e la media di tweet restituiscano i risultati attesi    |
 
 
 <div id='software-utilizzati'/>
