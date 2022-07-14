@@ -39,8 +39,7 @@ Dopodiché l'utente può utilizzare il programma con le rotte sul client [Postma
 La creazione delle rotte è fatta in base a ciò che restituiscono:
 * [Rotte /list](#Rotte-/list)
 * [Rotte /metadata](#Rotte-/metadata)
-* [Rotte /stats](#Rotte-/stats)
-* [Rotte /filter](#Rotte-/filter)
+
 
 Però prima di analizzare le rotte dobbiamo capire il significato dei parametri:
 - `created_at` è una stringa contenente la data di creazione del Tweet
