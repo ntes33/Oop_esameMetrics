@@ -145,7 +145,7 @@ La lista di software & tools utilizzati è la seguente:
 
 ## AUTORI 👨‍💻
 
-* [Nguetsa Etienne Steve](https://github.com/ntes33) 50%
+* [Nguetsa Etienne Steve](https://github.com/ntes33) 60%
 
-* [Ganeanu Daniela](https://github.com/dganeanu) 50%
+* [Ganeanu Daniela](https://github.com/dganeanu) 40%
 
