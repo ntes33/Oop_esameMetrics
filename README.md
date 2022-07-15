@@ -11,7 +11,6 @@
 * [Eccezioni](#eccezioni)
 * [UML Case Diagram](#umlcasediagram)
 * [UML Class Diagram](#umlclassdiagram)
-* [JUnit test](#JUnit-test)
 * [Software utilizzati](#software-utilizzati)
 * [Autori](#autori)
 
@@ -89,6 +88,8 @@ Avremmo potuto separare i vari filtri interni al `for` in più funzioni per aver
 
 `throws` WrongFilterException Caso filtro errato
 
+
+
 <div id='eccezioni'/>
 
 ## Eccezioni ❌
@@ -98,6 +99,8 @@ Il programma contiene delle eccezioni personalizzate :
 `WrongFilterException` nel caso in cui venga inserito un filtro sbagliato
 
 `EmptyListException` che stampa un messaggio d'errore passato come parametro
+
+
 
 <div id='umlcasediagram'/>
 
@@ -119,7 +122,7 @@ Il programma contiene delle eccezioni personalizzate :
 
 
 
-## JUNIT TEST 👨‍🔬
+
 
 
 
