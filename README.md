@@ -151,4 +151,4 @@ La lista di software & tools utilizzati è la seguente:
 * [Nguetsa Etienne Steve](https://github.com/ntes33) 60%
 
 * [Ganeanu Daniela](https://github.com/dganeanu) 40%
-
+    
