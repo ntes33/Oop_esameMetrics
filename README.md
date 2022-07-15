@@ -18,7 +18,7 @@
 
 ## INTRODUZIONE
 
-Attraverso le **Application Programming Interface**, note anche come 'api' derivate dalla pagina [Twitter Developer](https://developer.twitter.com/en) , il programma valuta una lista di tweet di un account scelto per poi analizzare le metriche di engagement dei tweet. L'utente ha la possibilità di imporre le statistiche sull'engagement dei singoli tweet con media e varianza oppure imporre dei filtri per fasce orarie dei tweet.
+Attraverso le **Application Programming Interface**, note anche come 'api' derivate dalla pagina [Twitter Developer](https://developer.twitter.com/en) , il programma valuta una lista di tweet di un account scelto per poi analizzare le metriche di engagement dei tweet. L'utente ha la possibilità di imporre le statistiche sull'engagement dei singoli tweet con media e varianza oppure imporre dei filtri per fasce orarie dei tweet. Al fine di poter fare le statistiche il body deve essere json.
 
 <div id='installazione-ed-utilizzo'/>
 
