@@ -58,6 +58,7 @@ I parametri inseriti dall'utente servono per filtrare la lista di tutti i tweet 
 
 Le rotte **/metadata** permettono di ottenere informazioni come `nametag` con una breve descrizione riguardo il contenuto del field, `info` contenente informazioni sul tipo di field e `type`.
 
+![image](https://user-images.githubusercontent.com/107246907/179125015-98209ab7-8db9-402c-b6ae-b07d45648238.png)
 
 
 <div id='/statistics'/>
