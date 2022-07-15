@@ -69,6 +69,9 @@ Le statistiche prendono in considerazione i parametri:
 * `param` list Lista di cui calcolare le statistiche
 * `return` Elenco delle statistiche
 
+Esempio di statistica generale, indica che il body deve essere un json:
+
+![image](https://user-images.githubusercontent.com/107246907/179127468-8bfb9b94-ce5f-4520-ad4a-236dbef7b8c6.png)
 
 
 
